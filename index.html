@@ -137,7 +137,7 @@ P.masuk=()=>`<div class="auth"><aside><span class="tag">AKUN MASYARAKAT</span><h
 <div class="note">Admin demo: username <b>admin</b>, sandi <b>admin123</b>. Segera ganti di kode sebelum dipakai sungguhan.</div></form></div>`;
 P.daftar=()=>`<div class="auth"><aside><span class="tag">AKUN MASYARAKAT</span><h2>Daftar untuk melapor dan memantau tindak lanjut.</h2><small>NIK ditampilkan tersamarkan setelah verifikasi.</small></aside>
 <form onsubmit="return doReg(event)"><h1>Daftar Akun</h1>
-<label for="n">NIK (16 digit)</label><input id="n" inputmode="numeric" maxlength="16" pattern="\d{16}" required>
+<label for="n">NIK (16 digit)</label><input id="n" inputmode="numeric" maxlength="16" pattern="[0-9]{16}" required>
 <label for="nm">Nama lengkap sesuai identitas</label><input id="nm" required>
 <label for="hp">Nomor HP aktif</label><input id="hp" type="tel" required>
 <label for="p">Kata sandi</label><input id="p" type="password" minlength="6" required>
