@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dishub Pacitan – Layanan Digital</title>
+<style>
+:root{--navy:#0b2a4a;--navy2:#143e68;--blue:#0f5ca8;--gold:#f2c23e;--bg:#f3f6fa;--line:#e1e8f0;--txt:#12263f;--mut:#667a92}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55}
+a{color:var(--blue)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:14px;padding:10px 20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;margin-right:auto}
+.logo{width:38px;height:38px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:var(--gold);font-weight:800}
+.brand small{display:block;font-size:9px;font-weight:500;color:var(--mut)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:6px 12px;border-radius:8px;text-decoration:none;color:var(--txt);font-size:14px}
+nav a.on{background:#e6f0fb;color:var(--blue);font-weight:700}
+.btn{display:inline-block;border:0;border-radius:8px;padding:9px 16px;font:600 14px inherit;cursor:pointer;text-decoration:none;background:var(--blue);color:#fff}
+.btn.gold{background:var(--gold);color:var(--navy)}.btn.light{background:#fff;color:var(--blue)}.btn.soft{background:#e6f0fb;color:var(--blue)}.btn.red{background:#fbe0e0;color:#8a1f1f}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+main{max-width:1100px;margin:auto;padding:24px 20px 48px;min-height:70vh}
+h1{margin:0 0 4px;font-size:28px;color:var(--navy)}
+.sub{color:var(--mut);margin:0 0 20px}
+.hero{background:var(--navy);color:#fff;border-radius:16px;border-left:8px solid var(--gold);padding:36px;display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+.hero h2{font-size:38px;line-height:1.15;margin:8px 0 12px}
+.hero p{color:#c9d7e8;max-width:46ch}
+.tag{color:var(--gold);font-weight:700;font-size:13px}
+.access{background:var(--navy2);border:1px solid #2a5a8c;border-radius:12px;padding:18px}
+.access a{display:flex;gap:12px;align-items:center;color:#fff;text-decoration:none;font-weight:600;padding:8px 0}
+.access b{background:var(--gold);color:var(--navy);border-radius:6px;padding:2px 9px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{margin:10px 0 4px;font-size:16px;color:var(--navy)}
+.card p{margin:0;color:var(--mut);font-size:14px;white-space:pre-line}
+a.card{text-decoration:none;color:inherit;display:block}a.card:hover{border-color:var(--blue)}
+.ic{width:36px;height:36px;border-radius:8px;background:#e6f0fb;color:var(--blue);display:grid;place-items:center;font-weight:800;font-size:13px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+label{display:block;font-weight:600;font-size:13px;margin:14px 0 4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff}
+textarea{min-height:90px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
+.auth{max-width:780px;margin:auto;display:grid;grid-template-columns:1fr 1.4fr;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.auth aside{background:var(--navy);color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:flex-end}
+.auth form{padding:28px}
+iframe.map{width:100%;height:280px;border:0;border-radius:10px;background:#e6f0fb;margin-top:10px}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700;background:#d7e9fb;color:#0b4a8a}
+.pill.w{background:#fbe7a8;color:#6b4b00}.pill.d{background:#cdeedb;color:#0b5a2d}.pill.x{background:#f6d0d0;color:#8a1f1f}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}
+.scroll{overflow-x:auto}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:16px}
+.stats b{font-size:28px;color:var(--blue);display:block}
+.admin{display:grid;grid-template-columns:190px 1fr;gap:16px}
+.side{background:var(--navy);border-radius:12px;padding:14px;color:#fff;align-self:start}
+.side a{display:block;color:#c9d7e8;padding:8px 10px;border-radius:8px;text-decoration:none;font-size:14px}
+.side a.on{background:var(--blue);color:#fff}
+.item{border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:12px;background:#fafcff}
+.note{background:#fff8e1;border:1px solid #f1dc95;border-radius:10px;padding:10px 14px;font-size:13px;margin:14px 0}
+footer{background:var(--navy);color:#fff}footer .bar{justify-content:space-between;padding:20px;font-size:13px}footer small{color:#9db4cf}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 18px;border-radius:10px;display:none;z-index:9;max-width:90vw}
+@media(max-width:760px){.hero,.split,.auth,.admin,.two{grid-template-columns:1fr}.hero{padding:22px}.hero h2{font-size:28px}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="brand" href="#beranda"><span class="logo">D</span><span>DISHUB PACITAN<small>DINAS PERHUBUNGAN KABUPATEN PACITAN</small></span></a>
+<nav id="nav"></nav><span id="auth"></span>
+</div></header>
+<main id="app"></main>
+<footer><div class="bar"><div><b>DINAS PERHUBUNGAN KABUPATEN PACITAN</b><br><small>Transportasi aman, tertib, lancar, dan berkeselamatan.</small></div><div id="ft"></div></div></footer>
+<div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ADMIN_USER="admin",ADMIN_PASS="admin123";
+const MENU=[["beranda","Beranda"],["profil","Profil"],["program","Program"],["laporan","Laporan"],["layanan","Layanan"],["kontak","Kontak"]];
+const KAT=["Jalan rusak","Lampu lalu lintas","Rambu/marka jalan","Parkir","Angkutan umum","Prasarana transportasi","Keselamatan lalu lintas","Lainnya"];
+const STATUS=["Diterima","Verifikasi","Diproses","Menunggu informasi","Selesai","Ditolak"];
+const embed=q=>"https://www.google.com/maps?q="+encodeURIComponent(q)+"&output=embed";
+const gmaps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const DEF=()=>({
+hero:{judul:"Terhubung untuk Pacitan yang lebih maju",desk:"Akses informasi transportasi, layanan publik, dan pengaduan masyarakat dalam satu portal yang mudah digunakan.",info:""},
+profil:[{t:"Sejarah Dinas",b:"Latar belakang pembentukan, dasar hukum, dan perkembangan organisasi."},{t:"Visi dan Misi",b:"Transportasi aman, tertib, lancar, dan berkeselamatan."},{t:"Struktur Organisasi",b:"Bagan organisasi dan pejabat."},{t:"Tugas dan Fungsi",b:"Uraian tugas pokok dan fungsi dinas."}],
+layanan:[
+{k:"PK",n:"Pengujian Kendaraan",u:"UPT Pengujian Kendaraan Bermotor",d:"Informasi syarat dan alur pengujian berkala kendaraan bermotor."},
+{k:"P",n:"Perparkiran",u:"Bidang Lalu Lintas dan Angkutan",d:"Informasi pengelolaan dan fasilitas parkir."},
+{k:"RL",n:"Rekayasa Lalu Lintas",u:"Bidang Pengendalian dan Keselamatan Transportasi",d:"Informasi manajemen lalu lintas dan rekayasa jalan."},
+{k:"PT",n:"Prasarana Transportasi",u:"Bidang Prasarana Transportasi",d:"Informasi fasilitas dan infrastruktur transportasi."},
+{k:"SK",n:"Sekretariat",u:"Sekretariat",d:"Dukungan administrasi dan pelayanan internal bagi seluruh unit kerja Dishub."}],
+dok:[...["Rencana Strategis","Indikator Kinerja Utama","Perjanjian Kinerja"].map(n=>({g:"program",n,y:"2025",url:""})),
+...["Rencana Kerja","LAKIP","Neraca","LRA","CALK","Laporan Kas","DPA","RKA"].map(n=>({g:"laporan",n,y:"2025",url:""}))],
+kontak:{alamat:"Jl. Gatot Subroto (Kompleks Terminal Tipe A), Purwoharjo, Kecamatan Pacitan, Kabupaten Pacitan, Jawa Timur 63515",tel:"(0357) 882006",email:"dishub@pacitankab.go.id",maps:"Dinas Perhubungan Kabupaten Pacitan",wa:""}});
+let S={user:null,users:[],tickets:[
+{id:"AD-0261",judul:"Lampu lalu lintas mati",kat:"Lampu lalu lintas",kec:"Pacitan",st:"Menunggu informasi",nik:"3501••••••••0001"},
+{id:"AD-0260",judul:"Jalan rusak",kat:"Jalan rusak",kec:"Arjosari",st:"Diproses",nik:"3501••••••••0002"}],c:DEF()};
+try{const x=JSON.parse(localStorage.getItem("dishub2")||"null");if(x)S=Object.assign(S,x)}catch(e){}
+const save=()=>{try{localStorage.setItem("dishub2",JSON.stringify(S))}catch(e){}};
+const toast=m=>{const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",3200)};
+const pill=s=>`<span class="pill ${s=="Selesai"?"d":s=="Ditolak"?"x":s.startsWith("Menunggu")||s=="Diterima"?"w":""}">${s}</span>`;
+const mask=n=>n.slice(0,4)+"••••••••"+n.slice(-4);
+const isAdmin=()=>S.user&&S.user.role=="admin";
+const C=()=>S.c;
+
+/* ---------- halaman publik ---------- */
+const P={};
+const lcard=(l,i)=>`<a class="card" href="#layanan-${i}"><div class="ic">${esc(l.k)}</div><h3>${esc(l.n)}</h3><p>${esc(l.d)}</p></a>`;
+P.beranda=()=>`<section class="hero"><div><span class="tag">LAYANAN DIGITAL DISHUB PACITAN</span><h2>${esc(C().hero.judul)}</h2><p>${esc(C().hero.desk)}</p>
+<div class="row"><a class="btn gold" href="#pengaduan">Ajukan Pengaduan</a><a class="btn light" href="#layanan">Lihat Layanan</a></div></div>
+<div class="access"><b style="background:none;color:#fff;padding:0">Pusat Akses Masyarakat</b><a href="#pengaduan"><b>1</b>Pengaduan online</a><a href="#lacak"><b>2</b>Pelacakan laporan</a><a href="#layanan"><b>3</b>Informasi layanan</a></div></section>
+${C().hero.info?`<div class="note"><b>Pengumuman:</b> ${esc(C().hero.info)}</div>`:""}
+<div class="grid">${C().layanan.slice(0,4).map(lcard).join("")}</div>`;
+P.profil=()=>`<h1>Profil</h1><p class="sub">Sejarah dan kelembagaan Dinas Perhubungan Kabupaten Pacitan.</p><div class="grid">${C().profil.map(c=>`<div class="card"><h3>${esc(c.t)}</h3><p>${esc(c.b)}</p></div>`).join("")}</div>`;
+const docs=g=>{const d=C().dok.filter(x=>x.g==g);return d.length?`<div class="grid">${d.map(x=>`<div class="card"><div class="ic">PDF</div><h3>${esc(x.n)}</h3><p>Tahun ${esc(x.y)}</p><div class="row">${x.url?`<a class="btn soft" href="${esc(x.url)}" target="_blank" rel="noopener">Unduh</a>`:`<button class="btn soft" onclick="toast('File belum diunggah oleh admin.')">Unduh</button>`}</div></div>`).join("")}</div>`:`<p>Belum ada dokumen.</p>`};
+P.program=()=>`<h1>Program</h1><p class="sub">Renstra, IKU, dan Perjanjian Kinerja.</p>${docs("program")}`;
+P.laporan=()=>`<h1>Laporan</h1><p class="sub">Dokumen publik dan pintu pengaduan masyarakat.</p>
+<div class="card"><h3>Pengaduan masyarakat</h3><p>Laporkan masalah transportasi di sekitar Anda.</p><div class="row"><a class="btn gold" href="#pengaduan">Ajukan Pengaduan</a><a class="btn soft" href="#lacak">Lacak Laporan</a></div></div>${docs("laporan")}`;
+P.layanan=()=>`<h1>Layanan</h1><p class="sub">Layanan yang ada di Dinas Perhubungan Kabupaten Pacitan.</p><div class="grid">${C().layanan.map(lcard).join("")}</div>`;
+const detail=i=>{const l=C().layanan[i];if(!l)return P.layanan();return `<p><a href="#layanan">Kembali ke Layanan</a></p><h1>${esc(l.n)}</h1><p class="sub">${esc(l.u)}</p><div class="card"><h3>Uraian</h3><p>${esc(l.d)}</p><div class="row"><a class="btn" href="#kontak">Hubungi kami</a></div></div>`};
+P.kontak=()=>{const k=C().kontak,tel="+62"+k.tel.replace(/\D/g,"").replace(/^0/,"");
+return `<h1>Kontak dan Lokasi Kantor</h1><p class="sub">Hubungi Dinas Perhubungan Kabupaten Pacitan melalui kanal resmi.</p>
+<div class="split"><div class="card"><h3>Dinas Perhubungan Kabupaten Pacitan</h3><p>${esc(k.alamat)}</p>
+<label>Telepon kantor</label><b style="font-size:22px;color:var(--navy)">${esc(k.tel)}</b><div class="row"><a class="btn" href="tel:${tel}">Telepon sekarang</a></div>
+<label>Email resmi</label><b>${esc(k.email)}</b><div class="row"><a class="btn soft" href="mailto:${esc(k.email)}">Kirim email</a></div>
+<div class="row">${k.wa?`<a class="btn gold" target="_blank" rel="noopener" href="https://wa.me/${esc(k.wa.replace(/\D/g,""))}">Chat WhatsApp</a>`:`<small style="color:var(--mut)">WhatsApp: nomor resmi belum diisi admin.</small>`}</div></div>
+<div class="card"><h3>Peta lokasi</h3><iframe class="map" title="Peta lokasi kantor" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="${embed(k.maps)}"></iframe>
+<div class="row"><a class="btn" href="${gmaps(k.maps)}" target="_blank" rel="noopener">Buka navigasi di Google Maps</a></div></div></div>`};
+
+/* ---------- akun ---------- */
+P.masuk=()=>`<div class="auth"><aside><span class="tag">AKUN MASYARAKAT</span><h2>Masuk untuk membuka portal Dishub Pacitan.</h2><small>Data identitas dilindungi dan digunakan untuk verifikasi layanan.</small></aside>
+<form onsubmit="return doLogin(event)"><h1>Masuk ke Akun</h1><p class="sub">Gunakan NIK (masyarakat) atau username (admin).</p>
+<label for="n">NIK / username</label><input id="n" required autocomplete="username"><label for="p">Kata sandi</label><input id="p" type="password" required autocomplete="current-password">
+<div class="row"><button class="btn" style="width:100%">Masuk</button></div><p>Belum memiliki akun? <a href="#daftar">Daftar masyarakat</a></p>
+<div class="note">Admin demo: username <b>admin</b>, sandi <b>admin123</b>. Segera ganti di kode sebelum dipakai sungguhan.</div></form></div>`;
+P.daftar=()=>`<div class="auth"><aside><span class="tag">AKUN MASYARAKAT</span><h2>Daftar untuk melapor dan memantau tindak lanjut.</h2><small>NIK ditampilkan tersamarkan setelah verifikasi.</small></aside>
+<form onsubmit="return doReg(event)"><h1>Daftar Akun</h1>
+<label for="n">NIK (16 digit)</label><input id="n" inputmode="numeric" maxlength="16" pattern="\d{16}" required>
+<label for="nm">Nama lengkap sesuai identitas</label><input id="nm" required>
+<label for="hp">Nomor HP aktif</label><input id="hp" type="tel" required>
+<label for="p">Kata sandi</label><input id="p" type="password" minlength="6" required>
+<label style="font-weight:400"><input type="checkbox" required style="width:auto"> Saya menyetujui pemberitahuan privasi.</label>
+<div class="row"><button class="btn">Daftar</button><a href="#masuk">Sudah punya akun</a></div></form></div>`;
+P.pengaduan=()=>`<h1>Buat Pengaduan</h1><p class="sub">Lengkapi informasi laporan. Pastikan lokasi dan bukti sesuai kejadian.</p>
+<form class="split" onsubmit="return doAdu(event)"><div class="card"><div class="two"><div><label for="k">Kategori</label><select id="k" required><option value="">Pilih kategori</option>${KAT.map(k=>`<option>${k}</option>`).join("")}</select></div><div><label for="sk">Subkategori</label><input id="sk"></div></div>
+<label for="j">Judul laporan</label><input id="j" required placeholder="Contoh: Lampu lalu lintas tidak berfungsi"><label for="d">Deskripsi kejadian</label><textarea id="d" required></textarea>
+<label for="w">Waktu kejadian</label><input id="w" type="datetime-local"><label for="f">Lampiran foto/video</label><input id="f" type="file" accept="image/*,video/*" multiple onchange="$('#pv').innerHTML=[...this.files].map(f=>'<span class=pill>'+esc(f.name.slice(0,22))+'</span>').join('')"><div id="pv" class="row"></div></div>
+<div class="card"><h3>Lokasi kejadian</h3><label for="kc">Kecamatan</label><input id="kc" required><label for="a">Alamat / patokan lokasi</label><input id="a" required>
+<div class="row"><button type="button" class="btn soft" onclick="cari()">Cari di peta</button><a id="gm" class="btn light" href="${gmaps(C().kontak.maps)}" target="_blank" rel="noopener">Buka Google Maps</a></div>
+<iframe id="mp" class="map" title="Peta lokasi kejadian" loading="lazy" src="${embed(C().kontak.maps)}"></iframe><div class="row"><button class="btn gold">Kirim Pengaduan</button></div></div></form>`;
+P.lacak=()=>{const m=S.tickets.filter(t=>t.nik==mask(S.user.nik)||isAdmin());
+return `<h1>Riwayat Pengaduan</h1><p class="sub">${isAdmin()?"Semua laporan.":"Laporan milik Anda (NIK "+mask(S.user.nik)+")."}</p><div class="card scroll">${m.length?`<table><tr><th>Tiket</th><th>Judul</th><th>Kategori</th><th>Status</th></tr>${m.map(t=>`<tr><td><b>${t.id}</b></td><td>${esc(t.judul)}</td><td>${esc(t.kat)}</td><td>${pill(t.st)}</td></tr>`).join("")}</table>`:`<p>Belum ada laporan. <a href="#pengaduan">Buat pengaduan</a>.</p>`}</div>`};
+
+/* ---------- panel admin ---------- */
+const inp=(p,l,v,t)=>`<label>${l}</label>${t?`<textarea oninput="sc('${p}',this.value)">${esc(v)}</textarea>`:`<input value="${esc(v)}" oninput="sc('${p}',this.value)">`}`;
+const AT=[["dash","Dashboard"],["konten","Beranda & Kontak"],["profil","Profil"],["layanan","Layanan"],["dok","Program & Laporan"],["user","Pengguna"]];
+const AP={
+dash:()=>{const n=f=>S.tickets.filter(t=>f(t.st)).length;return `<div class="stats"><div class="card"><b>${S.tickets.length}</b>Total pengaduan</div><div class="card"><b>${n(s=>s=="Diterima"||s=="Verifikasi")}</b>Menunggu verifikasi</div><div class="card"><b>${n(s=>s=="Diproses")}</b>Dalam proses</div><div class="card"><b>${n(s=>s=="Selesai")}</b>Selesai</div></div>
+<div class="card scroll"><h3>Pengaduan</h3><table><tr><th>Tiket</th><th>Judul</th><th>Kecamatan</th><th>Status</th></tr>${S.tickets.map((t,i)=>`<tr><td><b>${t.id}</b></td><td>${esc(t.judul)}</td><td>${esc(t.kec)}</td><td><select aria-label="Status ${t.id}" onchange="S.tickets[${i}].st=this.value;save();toast('Status diubah.');render()">${STATUS.map(s=>`<option ${s==t.st?"selected":""}>${s}</option>`).join("")}</select></td></tr>`).join("")}</table></div>
+<div class="card" style="margin-top:16px"><h3>Cadangan konten</h3><p>Unduh konten sebagai file JSON, atau pulihkan dari file cadangan.</p><div class="row"><button class="btn" onclick="exp()">Unduh cadangan</button><input type="file" accept=".json" style="width:auto" onchange="imp(this)"><button class="btn red" onclick="if(confirm('Kembalikan semua konten ke awal?')){S.c=DEF();save();render()}">Reset konten</button></div></div>`},
+konten:()=>{const h=C().hero,k=C().kontak;return `<div class="card"><h3>Beranda</h3>${inp("hero.judul","Judul utama",h.judul)}${inp("hero.desk","Deskripsi",h.desk,1)}${inp("hero.info","Pengumuman (kosongkan untuk menyembunyikan)",h.info,1)}</div>
+<div class="card" style="margin-top:16px"><h3>Kontak dan peta</h3>${inp("kontak.alamat","Alamat kantor",k.alamat,1)}${inp("kontak.tel","Telepon",k.tel)}${inp("kontak.email","Email",k.email)}${inp("kontak.maps","Kata kunci / alamat untuk Google Maps",k.maps)}${inp("kontak.wa","Nomor WhatsApp (format 62812..., kosong = nonaktif)",k.wa)}<p class="note">Perubahan tersimpan otomatis. Buka halaman Kontak untuk melihat peta.</p></div>`},
+profil:()=>`${C().profil.map((c,i)=>`<div class="item">${inp(`profil.${i}.t`,"Judul",c.t)}${inp(`profil.${i}.b`,"Isi",c.b,1)}<div class="row"><button class="btn red" onclick="del('profil',${i})">Hapus</button></div></div>`).join("")}<div class="row"><button class="btn" onclick="add('profil',{t:'Judul baru',b:''})">Tambah kartu</button></div>`,
+layanan:()=>`${C().layanan.map((c,i)=>`<div class="item"><div class="two">${inp(`layanan.${i}.k`,"Kode singkat",c.k)}${inp(`layanan.${i}.n`,"Nama layanan",c.n)}</div>${inp(`layanan.${i}.u`,"Unit penanggung jawab",c.u)}${inp(`layanan.${i}.d`,"Uraian",c.d,1)}<div class="row"><button class="btn red" onclick="del('layanan',${i})">Hapus</button></div></div>`).join("")}<div class="row"><button class="btn" onclick="add('layanan',{k:'NEW',n:'Layanan baru',u:'',d:''})">Tambah layanan</button></div>`,
+dok:()=>`<p class="sub">Isi kolom Tautan dengan alamat file PDF, misalnya dokumen/lakip-2025.pdf atau link Google Drive.</p>${C().dok.map((c,i)=>`<div class="item"><div class="two"><div><label>Kelompok</label><select onchange="sc('dok.${i}.g',this.value)"><option value="program" ${c.g=="program"?"selected":""}>Program</option><option value="laporan" ${c.g=="laporan"?"selected":""}>Laporan</option></select></div>${inp(`dok.${i}.y`,"Tahun",c.y)}</div>${inp(`dok.${i}.n`,"Judul dokumen",c.n)}${inp(`dok.${i}.url`,"Tautan file",c.url)}<div class="row"><button class="btn red" onclick="del('dok',${i})">Hapus</button></div></div>`).join("")}<div class="row"><button class="btn" onclick="add('dok',{g:'laporan',n:'Dokumen baru',y:'2026',url:''})">Tambah dokumen</button></div>`,
+user:()=>`<div class="card scroll"><table><tr><th>Nama</th><th>NIK</th><th>HP</th><th></th></tr>${S.users.map((u,i)=>`<tr><td>${esc(u.nama)}</td><td>${mask(u.nik)}</td><td>${esc(u.hp)}</td><td><button class="btn red" onclick="if(confirm('Hapus akun ini?')){S.users.splice(${i},1);save();render()}">Hapus</button></td></tr>`).join("")||"<tr><td>Belum ada pengguna terdaftar.</td></tr>"}</table></div>`};
+P.admin=t=>`<h1>Panel Admin</h1><p class="sub">Kelola konten dan pengaduan. Perubahan tersimpan otomatis di browser ini.</p><div class="admin"><div class="side">${AT.map(a=>`<a href="#admin-${a[0]}" class="${a[0]==t?"on":""}">${a[1]}</a>`).join("")}</div><div>${(AP[t]||AP.dash)()}</div></div>
+<div class="note">Penting: data tersimpan di browser (localStorage). Untuk mempublikasikan ke semua pengunjung, perlu backend; GitHub Pages hanya menyajikan file statis.</div>`;
+
+/* ---------- aksi ---------- */
+function sc(p,v){const a=p.split(".");let o=S.c;a.slice(0,-1).forEach(k=>o=o[k]);o[a.at(-1)]=v;save()}
+function add(l,x){S.c[l].push(x);save();render()}
+function del(l,i){if(confirm("Hapus item ini?")){S.c[l].splice(i,1);save();render()}}
+function exp(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(S.c,null,1)],{type:"application/json"}));a.download="konten-dishub.json";a.click()}
+function imp(el){const f=el.files[0];if(!f)return;f.text().then(t=>{try{S.c=Object.assign(DEF(),JSON.parse(t));save();toast("Konten dipulihkan.");render()}catch(e){toast("File tidak valid.")}})}
+function cari(){const q=$("#a").value+" "+$("#kc").value+" Pacitan";$("#mp").src=embed(q);$("#gm").href=gmaps(q)}
+function doLogin(e){e.preventDefault();const n=$("#n").value.trim(),p=$("#p").value;
+if(n==ADMIN_USER&&p==ADMIN_PASS){S.user={nik:"admin",nama:"Administrator",role:"admin"};save();toast("Masuk sebagai admin.");location.hash="#admin";return false}
+const u=S.users.find(x=>x.nik==n&&x.pw==p);if(!u){toast("NIK atau kata sandi salah, atau akun belum terdaftar.");return false}
+S.user={nik:u.nik,nama:u.nama,role:"warga"};save();location.hash="#beranda";return false}
+function doReg(e){e.preventDefault();const n=$("#n").value;if(S.users.some(x=>x.nik==n)){toast("NIK sudah terdaftar. Silakan masuk.");return false}
+S.users.push({nik:n,nama:$("#nm").value,hp:$("#hp").value,pw:$("#p").value});save();toast("Pendaftaran berhasil. Silakan masuk.");location.hash="#masuk";return false}
+function doAdu(e){e.preventDefault();const id="AD-0"+(262+S.tickets.length-2);
+S.tickets.unshift({id,judul:$("#j").value,kat:$("#k").value,kec:$("#kc").value,st:"Diterima",nik:isAdmin()?"admin":mask(S.user.nik)});save();toast("Pengaduan terkirim. Nomor tiket: "+id);location.hash="#lacak";return false}
+function logout(){S.user=null;save();location.hash="#masuk";toast("Anda telah keluar.")}
+
+/* ---------- router dengan gerbang login ---------- */
+function render(){
+let h=(location.hash||"#beranda").slice(1);const open=["masuk","daftar"];
+if(!S.user&&!open.includes(h)){location.hash="#masuk";return}
+if(S.user&&open.includes(h)){location.hash=isAdmin()?"#admin":"#beranda";return}
+if(h.startsWith("admin")&&!isAdmin()){toast("Halaman ini khusus admin.");location.hash="#beranda";return}
+const page=h.startsWith("layanan-")?"layanan":h.startsWith("admin")?"admin":h;
+$("#nav").innerHTML=S.user?MENU.map(m=>`<a href="#${m[0]}" class="${m[0]==page?"on":""}">${m[1]}</a>`).join("")+(isAdmin()?`<a href="#admin" class="${page=="admin"?"on":""}">Admin</a>`:""):"";
+$("#auth").innerHTML=S.user?`<span style="font-size:13px;color:var(--mut)">${esc(S.user.nama)}</span> <button class="btn" onclick="logout()">Keluar</button>`:`<a class="btn" href="#masuk">Masuk</a> <a class="btn gold" href="#daftar">Daftar</a>`;
+$("#ft").textContent=C().kontak.tel+" | "+C().kontak.email;
+const out=h.startsWith("layanan-")?detail(+h.slice(8)):h.startsWith("admin")?P.admin(h.split("-")[1]||"dash"):(P[h]||P.beranda)();
+$("#app").innerHTML=out;window.scrollTo(0,0)}
+addEventListener("hashchange",render);render();
+</script>
+</body>
+</html>
